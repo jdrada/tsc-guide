@@ -1,4 +1,4 @@
-import GetTutorials from "../hooks/getTutorials";
+import GetTutorials from "../hooks/useGetTutorials";
 import TutorialCard from "../components/TutorialCard/TutorialCard";
 
 const Landing = () => {
@@ -20,7 +20,7 @@ const Landing = () => {
         <div className="mt-12">
           <ul className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
             {data.map((data) => (
-              <TutorialCard key={data.id} item={data.attributes} />
+              <TutorialCard item={data.attributes} id={data.id} />
             ))}
           </ul>
         </div>
