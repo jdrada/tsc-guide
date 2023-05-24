@@ -31,7 +31,7 @@ interface MetaData {
   };
 }
 
-const GetTutorials = () => {
+const useGetTutorials = () => {
   const [data, setData] = useState<DataItem[]>([]);
 
   const fetcher = async () => {
@@ -52,4 +52,4 @@ const GetTutorials = () => {
 
   return { data };
 };
-export default GetTutorials;
+export default useGetTutorials;
