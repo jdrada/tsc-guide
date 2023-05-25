@@ -6,6 +6,7 @@ import {
   materialDark,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import { CodeComponent } from "react-markdown/lib/ast-to-react";
 
 export type TutorialData = {
   data: {
@@ -42,19 +43,11 @@ const Tutorial = () => {
 
   return (
     <section className="py-14">
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-        <div className="max-w-xl">
-          <h1 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-            {tutorial.attributes?.Title}
-          </h1>
-          <p className="text-gray-600 mt-3">
-            {tutorial.attributes?.Description}
-          </p>
-        </div>
+      <div className="max-w-screen-lg mx-auto px-4 md:px-8">
         <ReactMarkdown
           children={tutorial.attributes?.Article as string}
           components={{
-            code: renderCodeBlock,
+            code: renderCodeBlock as CodeComponent,
           }}
         />
       </div>
